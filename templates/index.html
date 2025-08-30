@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Fraud Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>💳 Fraud Detection System</h1>
+    <form method="POST">
+        <label>Amount</label>
+        <input type="number" step="any" name="amt" required>
+
+        <label>Latitude</label>
+        <input type="number" step="any" name="lat" required>
+
+        <label>Longitude</label>
+        <input type="number" step="any" name="long" required>
+
+        <label>City Population</label>
+        <input type="number" step="any" name="city_pop" required>
+
+        <label>Unix Time</label>
+        <input type="number" step="any" name="unix_time" required>
+
+        <label>Merchant Latitude</label>
+        <input type="number" step="any" name="merch_lat" required>
+
+        <label>Merchant Longitude</label>
+        <input type="number" step="any" name="merch_long" required>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <div class="result">{{ prediction }}</div>
+    {% endif %}
+</div>
+</body>
+</html>
